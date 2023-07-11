@@ -1,5 +1,7 @@
-name: Gitleaks Secrets Scan
-on: [push]
+name: Secrets and SCA Analysis
+on: 
+  push:
+  workflow_dispatch:
 jobs:
   Credentials_Scanning:
     runs-on: ubuntu-latest
