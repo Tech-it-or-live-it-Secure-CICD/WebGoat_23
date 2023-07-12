@@ -29,6 +29,15 @@ jobs:
         with:
           name: Gitleaks Artifact Upload
           path:  ${{ github.workspace }}/gitleaks-reports.json
+      
+      - name: SAST
+        run: docker run --rm -v "${{ github.workspace }}:/src" returntocorp/semgrep semgrep --config=java -json > sast-results.json
+      
+      - name: upload_SAST   
+        uses: actions/upload-artifact@v3
+        with:
+          name: SAST Artifact Upload
+          path:  ${{ github.workspace }}/sast-reports.json
           
       - name: Depcheck
         uses: dependency-check/Dependency-Check_Action@main
