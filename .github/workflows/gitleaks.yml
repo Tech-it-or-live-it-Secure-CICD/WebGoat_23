@@ -31,7 +31,7 @@ jobs:
           path:  ${{ github.workspace }}/gitleaks-reports.json
       
       - name: SAST
-        run: docker run --rm -v "${{ github.workspace }}:/src" returntocorp/semgrep semgrep --config java > sast-results.json
+        run: docker run --rm -v "${{ github.workspace }}:/src" returntocorp/semgrep semgrep --config auto > sast-results.json
       
       - name: upload_SAST   
         uses: actions/upload-artifact@v3
