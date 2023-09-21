@@ -49,6 +49,7 @@ jobs:
           out: 'reports' # this is the default, no need to specify unless you wish to override it
           args: >
             --enableRetired
+            
       - name: Upload SCA results
         uses: actions/upload-artifact@master
         with:
