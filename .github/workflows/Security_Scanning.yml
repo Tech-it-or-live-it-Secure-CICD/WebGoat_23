@@ -38,6 +38,7 @@ jobs:
         with:
           name: SAST Artifact Upload
           path:  ${{ github.workspace }}/sast-results.json
+        
           
       - name: Depcheck
         uses: dependency-check/Dependency-Check_Action@main
